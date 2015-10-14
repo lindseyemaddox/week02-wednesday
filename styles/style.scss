@@ -1,0 +1,148 @@
+@import 'common_resetCss'; 
+@import 'mixins';
+@import '../bourbon/app/assets/stylesheets/bourbon';
+@import '../neat/app/assets/stylesheets/neat';
+
+$primary: 	#5ca4d7;
+$white:		#ffffff;
+$blue:		#80bbe5;
+$pink:		#d88eb3;
+$yellow:	#e0b888;
+$green:		#94be9a;
+
+html {
+  font-size: 14px;
+}
+body {
+	@include openSans();
+  	font-size: 1rem;
+}
+
+.inner {
+	max-width: 1313px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.hidden {
+	height: 0;
+	@include transition();
+	&:hover {
+		height: auto;
+	}
+}
+
+.fa {
+	color: $primary;
+	cursor: pointer;
+	@include transition();
+	&:hover {
+		color: $white;
+		background-color: $primary;
+	}
+	span {
+		display: none;
+	}
+}
+
+.blue {
+	background-color: $blue;
+}
+.pink {
+	background-color: $pink;
+}
+.yellow {
+	background-color: $yellow;
+}
+.green {
+	background-color: $green;
+}
+
+
+
+section {
+	color: $primary;
+	width: 30%;
+	display: inline-block;
+	margin: 40px 4.5% 66px 0;
+	&:last-child {
+		margin-right: 0;
+	}
+	div.product {
+		border: 2px solid $primary;
+		padding: 30px;
+		position: relative;
+		i {
+			padding: 7px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			border: 2px solid $primary;
+			border-top: none;
+			border-right: none;
+		}
+	}
+	img {
+		width: 100%;
+	}
+	div.buttons {
+		border: 2px solid $primary;
+		border-top: none;
+		position: relative;
+		i {
+			width: 20%;
+			float: left;
+			text-align: center;
+			font-size: 1.3em;
+			border-right: 2px solid $primary;
+			padding: 20px 0;
+			&:last-child {
+				border-left: 2px solid $primary;
+				border-right: none;
+			}
+		}
+		@include clearfix();
+		.color {
+			margin: 5% 7%;
+			padding: 10px 0;
+			width: 6%;
+			border: none;
+			text-indent: -9999px;
+			span {
+				display: none;
+			}
+		}
+	}
+	div.description {
+		font-size: 1.8em;
+		padding: 25px 0;
+		p.title {
+			float: left;
+		}
+		p.price {
+			float: right;
+			text-align: right;
+			font-weight: bold;
+		}
+		@include clearfix();
+	}
+	&#blue .buttons > .color {
+		background-color: $blue; 
+	}
+	&#pink .buttons > .color {
+		background-color: $pink; 
+	}
+	&#yellow .buttons > .color {
+		background-color: $yellow; 
+	}
+	div.colors {
+		overflow: hidden;
+		position: absolute;
+	}
+}
+
+
+@import 'responsive'; 
+
+
+
