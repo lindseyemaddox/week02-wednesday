@@ -237,6 +237,14 @@ svg:not(:root) {
     page-break-after: avoid; } }
 
 html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
   font-size: 14px; }
 
 body {
@@ -250,22 +258,18 @@ body {
 
 .hidden {
   height: 0;
-  -webkit-transition: all 400ms ease;
-  -moz-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  transition: all 400ms ease; }
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
   .hidden:hover {
     height: auto; }
 
 .fa {
   color: #5ca4d7;
   cursor: pointer;
-  -webkit-transition: all 400ms ease;
-  -moz-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  transition: all 400ms ease; }
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
   .fa:hover {
     color: #ffffff;
     background-color: #5ca4d7; }
@@ -320,9 +324,9 @@ section {
         border-left: 2px solid #5ca4d7;
         border-right: none; }
     section div.buttons::after {
-      content: '';
-      display: block;
-      clear: both; }
+      clear: both;
+      content: "";
+      display: table; }
     section div.buttons .color {
       margin: 5% 7%;
       padding: 10px 0;
@@ -341,9 +345,9 @@ section {
       text-align: right;
       font-weight: bold; }
     section div.description::after {
-      content: '';
-      display: block;
-      clear: both; }
+      clear: both;
+      content: "";
+      display: table; }
   section#blue .buttons > .color {
     background-color: #80bbe5; }
   section#pink .buttons > .color {
